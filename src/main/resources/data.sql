@@ -1,4 +1,3 @@
--- 상품 데이터
 INSERT INTO products (name, price, stock, description, created_at, updated_at) VALUES
                                                                                    ('코튼 트윌 볼캡', 5000, 200, '데일리 필수템 코튼 트윌 볼캡. 가볍고 편안한 착용감으로 어떤 코디에도 포인트.', NOW(), NOW()),
                                                                                    ('베이직 스트라이프 삭스 3팩', 6900, 300, '데일리 필수 스트라이프 양말 3켤레 세트. 코튼 혼방으로 부드럽고 통기성 우수.', NOW(), NOW()),
@@ -12,3 +11,6 @@ INSERT INTO products (name, price, stock, description, created_at, updated_at) V
                                                                                    ('울 블렌드 싱글 코트', 198000, 0, '고급 울 블렌드 소재의 싱글 코트. 클래식한 실루엣으로 격식있는 룩 완성.', NOW(), NOW()),
                                                                                    ('스트레치 슬림 치노팬츠', 48000, 80, '스트레치 소재로 편안한 슬림 치노팬츠. 오피스부터 캐주얼까지 활용도 높은 아이템.', NOW(), NOW()),
                                                                                    ('코튼 와플 반팔티', 9900, 180, '와플 조직의 코튼 반팔티. 은은한 텍스처감으로 심플하지만 디테일이 살아있는 아이템.', NOW(), NOW());
+
+INSERT INTO members (name, email, password_hash, phone_number, created_at, updated_at) VALUES
+    ('르탄이', 'sparta@nbcamp.com', '$2b$10$GPazGXUOf.Ek2M3YYbt4GuGluvmUlm9.dA6M7MVQca4CQ0/iufLP.', '010-1234-5678', NOW(), NOW());
