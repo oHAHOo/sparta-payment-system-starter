@@ -3,7 +3,13 @@ package com.sparta.paymentsystem.domain.product.entity;
 import com.sparta.paymentsystem.global.entity.BaseTimeEntity;
 import com.sparta.paymentsystem.global.error.BusinessException;
 import com.sparta.paymentsystem.global.error.ErrorCode;
-import jakarta.persistence.*;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -41,6 +47,16 @@ public class Product extends BaseTimeEntity {
 		this.price = price;
 		this.stock = stock;
 		this.description = description;
+	}
+
+	public void deductStock(int quantity) {
+		if (quantity <= 0) {
+			throw new BusinessException(ErrorCode.INVALID_STOCK);
+		}
+		if (quantity > this.stock) {
+			throw new BusinessException(ErrorCode.INSUFFICIENT_STOCK);
+		}
+		this.stock -= quantity;
 	}
 
 }
